@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram-бот | ЭкоМедиа</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .bot-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        .feature-card h4 {
+            color: #38bdf8;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        .bot-launch-container {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(56, 189, 248, 0.05) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 15px;
+        }
+        .bot-launch-container p {
+            margin-bottom: 1.5rem;
+        }
+        pre {
+            background: #020617;
+            padding: 1.5rem;
+            border-radius: 10px;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+            margin: 1.5rem 0;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            color: #38bdf8;
+            font-size: 0.95rem;
+        }
+        .code-keyword { color: #f43f5e; }
+        .code-string { color: #10b981; }
+        .code-comment { color: #64748b; }
+        .diagram-container {
+            margin: 2rem 0;
+            background: rgba(255,255,255,0.01);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .diagram-container img, .diagram-container svg {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Эко<span>Медиа</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="">Главная</a></li>
+                <li><a href="about.html" class="">О проекте</a></li>
+                <li><a href="participants.html" class="">Участники</a></li>
+                <li><a href="bot.html" class="active">Telegram-бот</a></li>
+                <li><a href="journal.html" class="">Журнал</a></li>
+                <li><a href="resources.html" class="">Ресурсы</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="content-section">
+            <h2>Интерактивный <span>Telegram-бот</span></h2>
+            <p>В рамках вариативной части проекта (Практическая реализация технологии) нашей командой был спроектирован и разработан Telegram-бот <strong>«ЭкоМедиа»</strong>. Он служит интерактивным продолжением нашего медиа-ресурса, позволяя пользователям получать знания об экологии человека и проверять свои привычки прямо в мессенджере.</p>
+
+            <div class="bot-launch-container">
+                <h3>Запустить бот в Telegram</h3>
+                <p>Бот доступен круглосуточно. Пройдите викторину и оцените свой уровень цифровой гигиены прямо сейчас!</p>
+                <a href="https://t.me/ecomediaprobot" target="_blank" class="btn">🚀 Открыть ЭкоМедиа Бот</a>
+            </div>
+
+            <h3>Ключевые возможности бота</h3>
+            <div class="bot-features">
+                <div class="feature-card">
+                    <h4>📝 Эко-викторина</h4>
+                    <p>Интерактивный тест из 3-х комплексных вопросов о влиянии микропластика, загрязнении питьевой воды и гаджетах. Бот отправляет развернутые научные пояснения после каждого ответа.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>💡 Эко-советы</h4>
+                    <p>Выдача случайных практических рекомендаций по улучшению повседневной экологии (правила фильтрации воды, отказ от пластика, проветривание).</p>
+                </div>
+                <div class="feature-card">
+                    <h4>💤 Тест цифровой гигиены</h4>
+                    <p>Диагностический опросник с подсчетом баллов. Позволяет пользователю оценить, насколько здоровы его цифровые привычки перед сном, и получить персональные советы.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🌐 Интеграция с сайтом</h4>
+                    <p>Возможность быстро перейти на основной сайт проекта для подробного изучения статей и отчетов.</p>
+                </div>
+            </div>
+
+            <h3>Архитектура и стек технологий</h3>
+            <p>Бот написан на языке <strong>Python</strong> с использованием библиотеки <strong>pyTelegramBotAPI</strong>. Логика основана на событийной модели (Message handlers) и обработке обратных вызовов (Callback queries) для интерактивных инлайн-кнопок.</p>
+
+            <h3>Диаграмма состояний бота</h3>
+            <p>Ниже представлена схема переходов состояний пользователя в боте во время прохождения тестов:</p>
+            
+            <div class="diagram-container">
+                <!-- SVG диаграмма состояний для визуального премиум-оформления -->
+                <svg viewBox="0 0 800 250" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Definitions for arrows -->
+                    <defs>
+                        <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#10b981"/>
+                        </marker>
+                    </defs>
+                    
+                    <!-- Nodes -->
+                    <rect x="20" y="90" width="100" height="50" rx="10" fill="rgba(255,255,255,0.05)" stroke="#64748b" stroke-width="1.5"/>
+                    <text x="70" y="120" fill="#fff" font-family="Inter" font-size="14" text-anchor="middle">/start</text>
+                    
+                    <rect x="220" y="90" width="120" height="50" rx="10" fill="rgba(16, 185, 129, 0.1)" stroke="#10b981" stroke-width="2"/>
+                    <text x="280" y="120" fill="#fff" font-family="Inter" font-size="14" text-anchor="middle">Главное меню</text>
+                    
+                    <rect x="440" y="30" width="140" height="50" rx="10" fill="rgba(56, 189, 248, 0.1)" stroke="#38bdf8" stroke-width="1.5"/>
+                    <text x="510" y="60" fill="#fff" font-family="Inter" font-size="13" text-anchor="middle">📝 Эко-викторина</text>
+
+                    <rect x="440" y="160" width="140" height="50" rx="10" fill="rgba(56, 189, 248, 0.1)" stroke="#38bdf8" stroke-width="1.5"/>
+                    <text x="510" y="190" fill="#fff" font-family="Inter" font-size="13" text-anchor="middle">💤 Тест гигиены</text>
+                    
+                    <rect x="680" y="90" width="100" height="50" rx="10" fill="rgba(255,255,255,0.05)" stroke="#64748b" stroke-width="1.5"/>
+                    <text x="730" y="120" fill="#fff" font-family="Inter" font-size="14" text-anchor="middle">Результаты</text>
+                    
+                    <!-- Connectors -->
+                    <line x1="120" y1="115" x2="215" y2="115" stroke="#10b981" stroke-width="2" marker-end="url(#arrow)"/>
+                    
+                    <path d="M 340 105 L 435 60" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#arrow)"/>
+                    <path d="M 340 125 L 435 175" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+                    <path d="M 580 60 L 675 105" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#arrow)"/>
+                    <path d="M 580 190 L 675 135" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#arrow)"/>
+                    
+                    <path d="M 730 90 A 200 200 0 0 0 280 85" fill="none" stroke="#64748b" stroke-width="1" stroke-dasharray="4" marker-end="url(#arrow)"/>
+                    <text x="500" y="115" fill="#64748b" font-family="Inter" font-size="11" text-anchor="middle">Сброс состояния</text>
+                </svg>
+            </div>
+
+            <h3>Фрагмент исходного кода</h3>
+            <p>Пример реализации обработчика запуска бота и главного меню в файле <code>src/main.py</code>:</p>
+            <pre><code><span class="code-keyword">import</span> telebot
+<span class="code-keyword">from</span> telebot <span class="code-keyword">import</span> types
+
+TOKEN = <span class="code-string">"8789087980:AAFaJprDF1jCo3u8mgBchWeef7i_qTnTV_8"</span>
+bot = telebot.TeleBot(TOKEN)
+
+<span class="code-comment"># Функция создания главного меню</span>
+<span class="code-keyword">def</span> <span class="code-theme">get_main_keyboard</span>():
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=<span class="code-keyword">True</span>, row_width=<span class="code-keyword">2</span>)
+    btn_quiz = types.KeyboardButton(<span class="code-string">"📝 Пройти эко-тест"</span>)
+    btn_tips = types.KeyboardButton(<span class="code-string">"💡 Получить эко-совет"</span>)
+    btn_hygiene = types.KeyboardButton(<span class="code-string">"💤 Тест цифровой гигиены"</span>)
+    btn_site = types.KeyboardButton(<span class="code-string">"🌐 О проекте и сайт"</span>)
+    markup.add(btn_quiz, btn_tips, btn_hygiene, btn_site)
+    <span class="code-keyword">return</span> markup
+
+<span class="code-comment"># Обработчик команды /start</span>
+<span class="code-keyword">@bot.message_handler</span>(commands=[<span class="code-string">'start'</span>])
+<span class="code-keyword">def</span> <span class="code-theme">send_welcome</span>(message):
+    bot.send_message(
+        message.chat.id, 
+        <span class="code-string">"👋 Приветствуем в ЭкоМедиа Боте! Используйте меню ниже:"</span>, 
+        reply_markup=get_main_keyboard()
+    )</code></pre>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Медиа-проектирование в экологии человека. Все права защищены.</p>
+    </footer>
+
+</body>
+</html>

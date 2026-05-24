@@ -1,0 +1,75 @@
+\documentclass[14pt, a4paper]{extarticle}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setmonofont{Courier New}
+\usepackage[russian]{babel}
+\usepackage{geometry}
+\geometry{left=3cm, right=1.5cm, top=2cm, bottom=2cm}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{indentfirst}
+\setlength{\parindent}{1.25cm}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\titleformat{\section}[block]{\bfseries\Large\centering}{}{0pt}{}
+\titleformat{\subsection}[block]{\bfseries\large}{}{0pt}{}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny,
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    commentstyle=\color{green!60!black}
+}
+
+\begin{document}
+
+% Титульный лист
+\begin{titlepage}
+\begin{center}
+    Федеральное государственное автономное образовательное учреждение высшего образования\\
+    «МОСКОВСКИЙ ПОЛИТЕХНИЧЕСКИЙ УНИВЕРСИТЕТ»\\[1cm]
+    Факультет информационных технологий\\
+    Кафедра «Информационная безопасность»\\[1cm]
+    Направление подготовки: 09.03.01 Программирование электронных устройств и систем\\[2cm]
+    
+    {\Large \textbf{ОТЧЕТ}}\\
+    {\large по проектной практике}\\[2cm]
+\end{center}
+
+\begin{flushleft}
+    \textbf{Студенты:} Расулов А.М., Кенешов Э.К. \hspace{1cm} \textbf{Группа:} 251-328\\[0.5cm]
+    \textbf{Место прохождения практики:} Московский Политех\\[0.5cm]
+    \textbf{Отчет принят с оценкой:} \underline{\hspace{4cm}} \textbf{Дата:} \underline{\hspace{4cm}}\\[0.5cm]
+    \textbf{Руководитель практики:} Иванов И.В.\\[0.5cm]
+    \textbf{Куратор проекта:} Филонова А.С.\\
+\end{flushleft}
+
+\vfill
+\begin{center}
+    Москва 2025
+\end{center}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\input{intro}
+\input{chapter1}
+\input{chapter2}
+\input{chapter3}
+\input{chapter4}
+\input{conclusion}
+\input{bibliography}
+\input{appendix}
+
+\end{document}
